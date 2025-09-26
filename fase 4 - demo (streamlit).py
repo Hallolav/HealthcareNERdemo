@@ -276,14 +276,13 @@ def predict_sentence(model, sentence, word_to_id, id_to_label, device='cpu', max
 
 def main():
     st.title("ilionx Healthcare Demo symptoon-NER Demo")
-    st.write("""Voor je ligt een demo van de Named Entity Recognition (NER) tool van ilionx.Deze tool haalt symptomen en personen uit de tekst. Op deze manier is het voor artsen snel duidelijk welke symptomen genoemd zijn in een intakegesprek. Op deze manierwordt het (geautomatiseerd) schrijven van een EPD een stuk makkelijekr.
-    
-Het NER-model is getraind op fictieve data. Daardoor kan de tool gedeeld worden met derden zonder dat er privacygevoelige informatie wordt gedeeld. Het nadeel hiervan is dat de data erg onnatuurlijk lijkt: mensen praten niet zoals de LLM gegenereerd heeft. De "echte" EPD's zullen van hogere kwaliteit zijn dan de gegenereerde teksten. Daardoor zullen de daadwerkelijke resultaten beter zijn dan deze demo-resultaten.
-             
-Het voordeel van een NER-model ten op zichte van een LLM is dat het model veel kleiner is. Het draait lokaal en gevoelige (patient)gegevens worden dus niet met derden gedeeld. Ook werkt het NER-model veel sneller: het kan in real-time teksten analyseren en de symptomen weergeven.
-             
-Om je eigen tekst te kunnen testen, kun je de voorbeeldtekst hieronder aanpassen. Houd er rekening mee dat het model een bepaalde opmaak verwacht: een clientnummer, naam, arts en datum bovenaan de pagina. Daarnaast wordt het resultaat als een "gesprek" weergegeven, dus de patient zegt iets en dan de dokter. Zo gaat het immers ook "in het echt", wanneer tijdens een intakegesprek de patient en de huisarts met elkaar praten.
-    """)
+    st.write("""Voor je ligt een demo van de Named Entity Recognition (NER) tool van ilionx. Deze tool herkent symptomen en personen in tekst. Op deze manier is het voor artsen snel duidelijk welke symptomen genoemd worden in een intakegesprek. Op deze manier wordt het (geautomatiseerd) schrijven én doorlezen van een EPD een stuk makkelijker.
+ 
+Het NER-model is getraind op fictieve data. Daardoor kan de tool gedeeld worden met derden zonder dat er privacygevoelige informatie wordt gedeeld. Het nadeel hiervan is dat de data onnatuurlijk lijkt: mensen praten niet zoals de door de teksten die door een gegenereerd zijn. De "echte" EPD's zullen van hogere kwaliteit zijn dan de gegenereerde teksten. Daardoor zullen de daadwerkelijke resultaten beter zijn dan deze demo-resultaten.
+ 
+Het voordeel van een NER-model ten opzichte van een LLM is dat het model veel kleiner is. Het draait lokaal en gevoelige (patiënt)gegevens worden dus niet met derden gedeeld. Ook werkt het NER-model veel sneller: het kan in real-time teksten analyseren en de symptomen weergeven.
+ 
+Om je eigen tekst te kunnen testen, kun je de voorbeeldtekst hieronder aanpassen. Houd er rekening mee dat het model een bepaalde opmaak verwacht: een cliëntnummer, naam, arts en datum bovenaan de pagina. Daarnaast wordt het resultaat als een "gesprek" weergegeven, dus de patient zegt iets en dan de dokter. Zo gaat het immers ook "in het echt", wanneer tijdens een intakegesprek de patient en de huisarts met elkaar praten.""")
     
     # Load model
     model, word_to_id, id_to_label, entity_f1 = load_model()
